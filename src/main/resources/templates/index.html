@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    Hello world!
+    <h1>Calculator</h1>
+
+    <form action="#" th:action="@{/todo}" th:object="${operation}" method="post">
+        <p>First value: <input type="text" th:field="*{firstValue}" /></p>
+        <p>Second value: <input type="text" th:field="*{secondValue}" /></p>
+        <p><input type="submit" value="Add"/></p>
+    </form>
+
+    <h1>Result</h1>
+    <p th:text="'id: ' + ${operation.result}" />
 </body>
 </html>
