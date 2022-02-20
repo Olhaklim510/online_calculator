@@ -19,7 +19,7 @@ public class MainController {
     @PostMapping(value = "/todo", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String add(@ModelAttribute Operation operation, Model model) {
         System.out.println("Hello : " + operation.getFirstValue());
-        operation.setResult(operation.getFirstValue() * operation.getSecondValue());
+        operation.setResult(operation.getFirstValue() + operation.getSecondValue());
         return "index";
     }
 }
