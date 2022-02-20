@@ -10,10 +10,17 @@
     <form action="#" th:action="@{/todo}" th:object="${operation}" method="post">
         <p>First value: <input type="text" th:field="*{firstValue}" /></p>
         <p>Second value: <input type="text" th:field="*{secondValue}" /></p>
-        <p><input type="submit" value="Add"/></p>
+        <p>Type:
+            <select name="type">
+                <option th:each="tp : ${T(com.example.test.model.OperationType).values()}"
+                        th:value="${tp}"
+                        th:text="${tp.displayValue}"></option>
+            </select>
+        </p>
+        <p><input type="submit" value="Calculate"/></p>
     </form>
 
     <h1>Result</h1>
-    <p th:text="'id: ' + ${operation.result}" />
+    <p th:text="'id: ' + ${operationResult.result}" />
 </body>
 </html>
