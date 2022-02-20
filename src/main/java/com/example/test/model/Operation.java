@@ -1,35 +1,30 @@
 package com.example.test.model;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Operation {
 
-    long firstValue;
-    long secondValue;
-    long result;
+    private BigDecimal firstValue;
+    private BigDecimal secondValue;
+    private OperationType type;
 
-    public long getFirstValue() {
+    public Operation(BigDecimal firstValue, BigDecimal secondValue, OperationType type) {
+        this.firstValue = firstValue;
+        this.secondValue = secondValue;
+        this.type = type;
+    }
+
+    public BigDecimal getFirstValue() {
         return firstValue;
     }
 
-    public void setFirstValue(long firstValue) {
-        this.firstValue = firstValue;
-    }
-
-    public long getSecondValue() {
+    public BigDecimal getSecondValue() {
         return secondValue;
     }
 
-    public void setSecondValue(long secondValue) {
-        this.secondValue = secondValue;
-    }
-
-    public long getResult() {
-        return result;
-    }
-
-    public void setResult(long result) {
-        this.result = result;
+    public OperationType getType() {
+        return type;
     }
 
     @Override
@@ -37,11 +32,13 @@ public class Operation {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Operation operation = (Operation) o;
-        return firstValue == operation.firstValue && secondValue == operation.secondValue && result == operation.result;
+        return Objects.equals(firstValue, operation.firstValue)
+                && Objects.equals(secondValue, operation.secondValue)
+                && type == operation.type;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstValue, secondValue, result);
+        return Objects.hash(firstValue, secondValue, type);
     }
 }
