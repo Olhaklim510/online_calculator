@@ -4,11 +4,14 @@ public enum OperationType {
     ADD("Addition"),
     SUB("Subtraction"),
     MUL("Multiplication"),
-    DIV("Division");
+    DIV("Division"),
+    RTP("Raising to the power of"),
+    SQR("Extracting the square root"),
+    PER("Percent");
 
     private final String displayValue;
 
-    private OperationType(String displayValue) {
+    OperationType(String displayValue) {
         this.displayValue = displayValue;
     }
 
