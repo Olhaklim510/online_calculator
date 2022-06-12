@@ -45,7 +45,7 @@ public class OperationService {
 
     private OperationResult multiplication(BigDecimal v1, BigDecimal v2) {
         BigDecimal result = v1.multiply(v2);
-        return new OperationResult(v2);
+        return new OperationResult(result);
     }
 
     private OperationResult division(BigDecimal v1, BigDecimal v2) {
@@ -76,7 +76,7 @@ public class OperationService {
             BigDecimal result = v1.divide(helpPercent, 5, RoundingMode.FLOOR);
             return new OperationResult(result);
         } catch (ArithmeticException exc){
-            System.out.println("Something went wrong");
+            System.out.println("Something went wrong!");
             }
         return null;
     }
