@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link th:href="@{/css/mystyle.css}" rel="stylesheet"/>
 </head>
 <body>
-    <h1>Calculator</h1>
-
+<div>
+    <h1>Online calculator</h1>
     <form action="#" th:action="@{/todo}" th:object="${operation}" method="post">
-        <p>First value: <input type="text" th:field="*{firstValue}" /></p>
-        <p>Second value: <input type="text" th:field="*{secondValue}" /></p>
+        <p>First value: <input type="text" th:field="*{firstValue}"/></p>
+        <p>Second value: <input type="text" th:field="*{secondValue}"/></p>
         <p>Type:
             <select name="type">
                 <option th:each="tp : ${T(com.example.test.model.OperationType).values()}"
@@ -19,8 +20,8 @@
         </p>
         <p><input type="submit" value="Calculate"/></p>
     </form>
-
     <h1>Result</h1>
-    <p th:text="'id: ' + ${operationResult.result}" />
+    <input type="text" th:field="${operationResult.result}"/>
+</div>
 </body>
 </html>
