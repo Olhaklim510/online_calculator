@@ -12,6 +12,6 @@ Run command in root folder of the project - `mvn clean package`.
 ## Run
 Run command in root of the project - `java -jar target\test-0.0.1-SNAPSHOT.jar`.
 
-To open calculator you need to go [localhost](http//localhost:8080/).
+To open calculator you need to go `http://localhost:8080/`.
 
 
